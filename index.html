@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard Ejemplo</title>
+    <style>
+        .step { display: none; }
+        .active { display: block; }
+    </style>
+</head>
+<body>
+
+
+    <h1>Anulación de cupos</h1>
+
+<div id="wizard">
+    <div class="step active">
+        <h2>Paso 1 Asiganar serial por ANS</h2>
+        
+        <button onclick="nextStep()">Siguiente</button>
+    </div>
+    <div class="step">
+        <h2>Paso 2 Rercpcionar serial por GNS</h2>
+<h5>
+        Errores comunes.
+        No permite recepcionar cupo errorxxxxxx
+
+    </h5>
+
+<p>
+
+Solución 1 :  
+Se debe insertar el cupo de forma manual en la base de datos local dejandolo en estado A
+Se debe realizar la RECEPCIÓN  del cupo.por GNS
+Se debe ANULAR el cupo por GNS
+
+</p>
+
+<p>
+Solución 2 :  
+Se  cambia el estado del cupo por TELNET op 2-2 y se deja el cupo en estado T
+Se debe ANULAR el cupo por GNS
+
+</p>
+        
+        <button onclick="nextStep()">Siguiente</button>
+        <button onclick="prevStep()">Anterior</button>
+    </div>
+
+
+    <div class="step">
+        <h2>Paso 3 Anulación de serial por GNS</h2>
+        
+        <button onclick="nextStep()">Siguiente</button>
+        <button onclick="prevStep()">Anterior</button>
+    </div>
+   
+    
+</div>
+
+<script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.step');
+
+    function nextStep() {
+        if (currentStep < steps.length - 1) {
+            steps[currentStep].classList.remove('active');
+            currentStep++;
+            steps[currentStep].classList.add('active');
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 0) {
+            steps[currentStep].classList.remove('active');
+            currentStep--;
+            steps[currentStep].classList.add('active');
+        }
+    }
+
+    function finishWizard() {
+        alert('Wizard completado');
+    }
+</script>
+
+</body>
+</html>
