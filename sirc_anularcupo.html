@@ -19,7 +19,7 @@
                 <div class="step active">
                     <h2 class="mb-5">Paso 1 Asiganar serial por ANS</h2>
                     
-                    <button onclick="nextStep()">Siguiente</button>
+                    <button onclick="nextStep()" class="btn btn-sm btn-outline-primary">Siguiente</button>
                 </div>
                 <div class="step">
                     <h2>Paso 2 Rercpcionar serial por GNS</h2>
@@ -29,24 +29,27 @@
 
                 </h5>
 
-            <p>
 
-            Solución 1 :  
-            Se debe insertar el cupo de forma manual en la base de datos local dejandolo en estado A
-            Se debe realizar la RECEPCIÓN  del cupo.por GNS
-            Se debe ANULAR el cupo por GNS
 
-            </p>
+            <div class="card border-info mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Solucion 1</h5>
+                  <li>Se debe insertar el cupo de forma manual en la base de datos local dejandolo en estado A</li>
+                  <li>Se debe realizar la RECEPCIÓN  del cupo.por GNS</li>
+                  <li>Se debe ANULAR el cupo por GNS</li>
+                </div>
+            </div>
 
-            <p>
-            Solución 2 :  
-            Se  cambia el estado del cupo por TELNET op 2-2 y se deja el cupo en estado T
-            Se debe ANULAR el cupo por GNS
-
-            </p>
+            <div class="card border-info mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Solucion 2</h5>
+                  <li>Se  cambia el estado del cupo por TELNET op 2-2 y se deja el cupo en estado T</li>
+                  <li> Se debe ANULAR el cupo por GNS</li>
+                </div>
+            </div>
                     
-                    <button onclick="nextStep()" class="btn">Siguiente</button>
-                    <button onclick="prevStep()">Anterior</button>
+                    <button onclick="nextStep()" class="btn btn-sm btn-outline-primary">Siguiente</button>
+                    <button onclick="prevStep()" class="btn btn-sm btn-outline-primary">Anterior</button>
                 </div>
 
 
